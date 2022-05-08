@@ -8,6 +8,37 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+## Introducción
+La amenaza sin igual del malware para Android es la causa raíz de varios problemas de seguridad en Internet. La industria del malware para Android se está volviendo cada vez más disruptiva con casi 12 000 nuevas instancias de malware para Android todos los días. La detección de malware de Android en los teléfonos inteligentes es un objetivo esencial para que la comunidad cibernética analice los resultados de muestras de malware amenazantes.
+
+## Malware en Andriod
+<center><iframe width="756" height="427" src="https://www.youtube.com/embed/wxKZn4Kt2WU?rel=0&showinfo=0&controls=0" frameborder="0" allowfullscreen></iframe></center>
+
+## Objetivo
+El objetivo de este proyecto de investigación propone analizar un conjunto de aplicaciones de malware de androide que se encuentran etiquetados y categorizados en la familia correspondiente. Para realizar este estudio se dispone de datasets que permitan comprender los cambios de comportamiento de estas categorías y familias de malware, se extraen seis categorías de características después de ejecutar el malware en un entorno emulado.Las principales características extraídas incluyen:
+
+* Memoria: Las características de la memoria definen las actividades realizadas por el malware mediante la utilización de la memoria.
+
+* API: Las características de la interfaz de programación de aplicaciones (API) delinean la comunicación entre dos aplicaciones.
+
+* Red: Las características de red describen los datos transmitidos y recibidos entre otros dispositivos de la red. Indica el uso de la red en primer plano y en segundo plano.
+
+* Batería: Las características de la batería describen el acceso a la activación de la batería y a los servicios mediante malware.
+
+* Logcat: Las características de Logcat escriben mensajes de registro correspondientes a una función realizada por malware
+
+* Proceso: Las características del proceso cuentan la interacción del malware con el número total de procesos.
+
+## Packages
+Para la realización de este proyecto se usan los siguientes packages en RStudio:
+
+| Packages instalados     |
+| ---------- | ---------- |
+| Campo A1   | Campo B1   |
+| Campo A2   | Campo B2   |
+| Campo A2   | Campo B2   |
+| Campo A2   | Campo B2   |
+| Campo A2   | Campo B2   |
 
 ## R Markdown
 
