@@ -1,7 +1,7 @@
 ---
-title: "MALWARE PARA ANDRIOD"
+title: "MALWARE PARA ANDROID"
 author: "Grupo5"
-date: '2022-05-07'
+date: '2022-05-29'
 output: html_document
 ---
 
@@ -11,11 +11,9 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Introducción
 La amenaza sin igual del malware para Android es la causa raíz de varios problemas de seguridad en Internet. La industria del malware para Android se está volviendo cada vez más disruptiva con casi 12 000 nuevas instancias de malware para Android todos los días. La detección de malware de Android en los teléfonos inteligentes es un objetivo esencial para que la comunidad cibernética analice los resultados de muestras de malware amenazantes.
 
-## Malware en Andriod
-<center><iframe width="756" height="427" src="https://www.youtube.com/embed/wxKZn4Kt2WU?rel=0&showinfo=0&controls=0" frameborder="0" allowfullscreen></iframe></center>
 
 ## Objetivo
-El objetivo de este proyecto de investigación propone analizar un conjunto de aplicaciones de malware de androide que se encuentran etiquetados y categorizados en la familia correspondiente. Para realizar este estudio se dispone de datasets que permitan comprender los cambios de comportamiento de estas categorías y familias de malware, se extraen seis categorías de características después de ejecutar el malware en un entorno emulado.Las principales características extraídas incluyen:
+El objetivo de este proyecto de investigación propone analizar un conjunto de aplicaciones de malware de androide que se encuentran etiquetados y categorizados en la familia correspondiente. Para realizar este estudio se dispone de un datasets http://205.174.165.80/CICDataset/CICAndMal2020/Dataset/ que forma parte del trabajo de invesgtigacion denominado CCCS-CIC-AndMal-2020; este estudio permite comprender los cambios de comportamiento de estas categorías y familias de malware, se extraen seis categorías de características después de ejecutar el malware en un entorno emulado.Las principales características extraídas incluyen:
 
 * Memoria: Las características de la memoria definen las actividades realizadas por el malware mediante la utilización de la memoria.
 
@@ -32,13 +30,23 @@ El objetivo de este proyecto de investigación propone analizar un conjunto de a
 ## Packages
 Para la realización de este proyecto se usan los siguientes packages en RStudio:
 
-| Packages instalados     |
-| ---------- | ---------- |
-| Campo A1   | Campo B1   |
-| Campo A2   | Campo B2   |
-| Campo A2   | Campo B2   |
-| Campo A2   | Campo B2   |
-| Campo A2   | Campo B2   |
+| Packages instalados |
+| ----------          |
+| dplyr               |
+| tydyr               |
+| ggplot2             |
+| knitr               |
+| readr               |
+
+## Muestra de datos
+
+Como parte del Dataset de la investigacion, se tienen 200 mil muestras de aplicaciones de Malware para Android agrupadas en 14 categorias de Malware y 191 familias de Malware distribuidad en dichas 14 categorias.
+
+Asi mismo dichos resultados de las pruebas se dan antes y despues del reinicio de un movil con Android con el fin de poder visualizar el comportamiento de los distintos tipos de malware.
+
+```{r}
+summary(c)
+```
 
 ## R Markdown
 
