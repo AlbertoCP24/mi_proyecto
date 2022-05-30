@@ -44,26 +44,50 @@ Como parte del Dataset de la investigacion, se tienen 200 mil muestras de aplica
 
 Asi mismo dichos resultados de las pruebas se dan antes y despues del reinicio de un movil con Android con el fin de poder visualizar el comportamiento de los distintos tipos de malware.
 
+Se muestra detalle de uno de los archivos de dataset
+
+```{r}
+summary(Adware_before_reboot_Cat)
+summary(Adware_after_reboot_Cat)
+```
+
+## Limpieza de datos
+
+En base al estudio de los datos y segun las respuestas que queramos reponder se hizo la limpieza de datos quedandonos con solo 9 columnas de las 144 columnas originales en el dataset, para ello se hiz uso del paquete DPLYR a traves del siguiente comando usado
+
+Adware_after_limpio<-dplyr::select(Adware_after_reboot_Cat,Memory_PssTotal,API__sessions,Network_TotalReceivedBytes,Network_TotalTransmittedBytes,Battery_wakelock,Logcat_total,Process_total,Category,Family)
+
+Adware_before_limpio<-dplyr::select(Adware_before_reboot_Cat,Memory_PssTotal,API__sessions,Network_TotalReceivedBytes,Network_TotalTransmittedBytes,Battery_wakelock,Logcat_total,Process_total,Category,Family)
+
+```{r}
+summary(Adware_before_limpio)
+summary(Adware_after_limpio)
+```
+
+## Filtrado de datos
+
+Se realiza la comparacion de los valores de antes y despues del reincio, tomamos como ejemplo el consumo de la bateria para una de las categorias
+
 ```{r}
 summary(c)
+
 ```
 
-## R Markdown
+## Graficas
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+Listamos como ejempo el consumo de la bateria de los Malware de la categoria de los Adware
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+```{r}
+ggplot(data=Adware_before_limpio) + geom_point(mapping = aes(x=Family, y=Battery_wakelock))
 ```
 
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r}
+ggplot(data=Adware_after_limpio) + geom_point(mapping = aes(x=Family, y=Battery_wakelock))
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## Conclusiones
+
+A la Pregunta ¿Que tipo de Malware es el de mayor impacto en la bateria de los moviles?
+
+En Base a lo observado en el filtrado de datos y en las graficas obtenidas, podemos confirmar que el Malware de la categoria de los Adware de nombre "Adviator" es el de mayor impacto en el uso de la bateria de los moviles, por lo que se podria pronosticar que de tener un desgaste del mismo y se descarta un problema fisico podemos darnos con el caso que el movil este afectado por este tipo de Malware.
